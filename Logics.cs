@@ -87,7 +87,6 @@ internal class Logics
                 {
                     Name = EditorName,
                     Description = EditorDescription,
-                    //CreationDate = DateTime.Now,
                     DeadlineDate = EditorEndDate,
                     Status = EditorStatus
                 });
@@ -136,6 +135,7 @@ internal class Logics
         }
 
         edit.ShowDialog();
+        SaveToFile();
     }
 
     private void SaveToFile()
@@ -148,7 +148,7 @@ internal class Logics
     {
         if (Saved) return;
 
-        switch (MessageBox.Show("Ваши изменения не сохранены, сохранить или отменить и выйти?", "Пятая лабы ХЫ",
+        switch (MessageBox.Show("   Вы хотите сохранить изменения?","",
                     MessageBoxButton.YesNoCancel, MessageBoxImage.Question))
         {
             case MessageBoxResult.Yes:
